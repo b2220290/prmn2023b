@@ -11,7 +11,7 @@ public class SelectDemo {
 
         try {
             PreExamDAO dao=new PreExamDAO();
-            List<PreExam> preExams=dao.selectPreExams(lessThan); //戻り値：条件を満たした
+            List<PreExam> preExams=dao.selectPreExams(lessThan); //戻り値：条件を満たした何か
             for (PreExam preExam:preExams){
                 preExam.print();
             }

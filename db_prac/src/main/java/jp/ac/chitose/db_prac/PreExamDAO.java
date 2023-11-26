@@ -28,4 +28,15 @@ public class PreExamDAO { //データベースを利用するクラス
         }
         return returning;
     }
+
+    public int deletePreExam(String gakusekiCode) throws SQLException{ //学生コードからタプルの消去
+        String sql="delete from 学生情報 where 学生コード = ?";
+        int n=0;
+        try(Connection conn=DriverManager.getConnection(URL,USER_NAME,USER_PASS);
+            PreparedStatement stmt=conn.prepareStatement(sql)) {
+                stmt.setString(1,gakusekiCode);
+                n=stmt.executeUpdate();
+        }
+        return n;
+    }
 }
